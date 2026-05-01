@@ -933,7 +933,7 @@ function ProductCard({ product }) {
             {product.price}
           </span>
           <a
-            href={`https://wa.me/923000000000?text=Hi! I want to order: ${encodeURIComponent(product.name)}`}
+            href={`https://wa.me/923036751255?text=Hi! I want to order: ${encodeURIComponent(product.name)}`}
             target="_blank"
             rel="noopener noreferrer"
             className="text-xs bg-[#0f5c2e] text-white px-3 py-1.5 rounded-full font-semibold hover:bg-[#1a8a47] transition-colors whitespace-nowrap"
@@ -1192,7 +1192,7 @@ export default function Services() {
                 — fast and free.
               </p>
               <a
-                href="https://wa.me/923000000000"
+                href="https://wa.me/923036751255"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-gold font-black px-7 py-3.5 text-sm sm:text-base inline-flex items-center gap-2"
