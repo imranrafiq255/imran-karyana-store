@@ -4,18 +4,25 @@ export const metadata = {
   verification: {
     google: "g0xJX6EItMq7o895BCZJqQnVHJx1xFr2DDAsI256qts",
   },
-  icons: {
-    icon: "/favicon.ico",
-    apple: "/assets/Imran-Karyana-Store-Logo.png",
-  },
-  // ✅ Title: City + Area + Core Services (60 chars max for Google)
-  title: "Imran Karyana Store – Channi Goth | Grocery, EasyPaisa & JazzCash",
 
-  // ✅ Description: Natural sentence, 150–160 chars, includes location + services
+  // ✅ FIX: Point ALL icon variants directly to your PNG logo
+  // Next.js injects these as <link> tags automatically — no manual tags needed in <head>
+  icons: {
+    icon: [{ url: "/Imran-Karyana-Store-Logo.png", type: "image/png" }],
+    shortcut: "/Imran-Karyana-Store-Logo.png",
+    apple: "/Imran-Karyana-Store-Logo.png",
+    other: [
+      {
+        rel: "icon",
+        url: "/Imran-Karyana-Store-Logo.png",
+      },
+    ],
+  },
+
+  title: "Imran Karyana Store – Channi Goth | Grocery, EasyPaisa & JazzCash",
   description:
     "Imran Karyana Store in Channi Goth – fresh groceries, cold drinks, ice cream, snacks, EasyPaisa & JazzCash cash withdrawal, and utility bill payments. Open 8AM–10PM daily.",
 
-  // ✅ Keywords: Local + service-specific + Urdu transliteration
   keywords: [
     "Imran Karyana Store",
     "karyana store Channi Goth",
@@ -45,13 +52,11 @@ export const metadata = {
   creator: "Imran Malik",
   publisher: "Imran Karyana Store",
 
-  // ✅ Replace with your real deployed domain
   metadataBase: new URL("https://imran-karyana-store.vercel.app"),
   alternates: {
     canonical: "https://imran-karyana-store.vercel.app",
   },
 
-  // ✅ Open Graph — controls how link looks on WhatsApp, Facebook, etc.
   openGraph: {
     title: "Imran Karyana Store – Channi Goth",
     description:
@@ -62,7 +67,7 @@ export const metadata = {
     type: "website",
     images: [
       {
-        url: "/og-image.jpg", // Create a 1200×630 store photo and save here
+        url: "/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "Imran Karyana Store – Channi Goth",
@@ -70,7 +75,6 @@ export const metadata = {
     ],
   },
 
-  // ✅ Twitter / X card
   twitter: {
     card: "summary_large_image",
     title: "Imran Karyana Store – Channi Goth",
@@ -79,7 +83,6 @@ export const metadata = {
     images: ["/og-image.jpg"],
   },
 
-  // ✅ Crawling rules
   robots: {
     index: true,
     follow: true,
@@ -92,7 +95,6 @@ export const metadata = {
     },
   },
 
-  // ✅ App metadata
   applicationName: "Imran Karyana Store",
   category: "Grocery Store",
 };
@@ -101,19 +103,15 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        {/* ✅ Mobile viewport */}
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-        {/* ✅ Theme color — matches your store's green brand */}
         <meta name="theme-color" content="#0f5c2e" />
 
-        {/* ✅ Geo tags — tells Google exactly where your business is */}
+        {/* ✅ Geo tags */}
         <meta name="geo.region" content="PK-PB" />
         <meta name="geo.placename" content="Channi Goth, Punjab, Pakistan" />
         <meta name="geo.position" content="28.6444;70.6679" />
         <meta name="ICBM" content="28.6444, 70.6679" />
 
-        {/* ✅ Language & content type */}
         <meta httpEquiv="content-language" content="en-PK" />
         <meta name="language" content="English" />
 
@@ -125,12 +123,11 @@ export default function RootLayout({ children }) {
           crossOrigin="anonymous"
         />
 
-        {/* ✅ Favicon — add your real logo as /public/favicon.ico */}
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        {/* ✅ REMOVED the manual <link rel="apple-touch-icon"> tag —
+            Next.js metadata.icons already handles all favicon injection above.
+            Having both causes a conflict and breaks favicon display. */}
 
-        {/* ✅ JSON-LD Structured Data — makes Google show rich results
-            (star ratings, hours, phone number directly in search) */}
+        {/* ✅ JSON-LD Structured Data */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -141,7 +138,7 @@ export default function RootLayout({ children }) {
               name: "Imran Karyana Store",
               alternateName: "Imran Kiryana Dukan",
               url: "https://imran-karyana-store.vercel.app",
-              logo: "https://imran-karyana-store.vercel.app/logo.png",
+              logo: "https://imran-karyana-store.vercel.app/Imran-Karyana-Store-Logo.png",
               image: "https://imran-karyana-store.vercel.app/og-image.jpg",
               description:
                 "Trusted neighbourhood karyana store in Channi Goth, Punjab. Offering fresh groceries, cold drinks, ice cream, snacks, EasyPaisa & JazzCash cash withdrawal, utility bill payments, and home delivery.",
@@ -182,12 +179,9 @@ export default function RootLayout({ children }) {
               currenciesAccepted: "PKR",
               paymentAccepted: "Cash, EasyPaisa, JazzCash",
               servesCuisine: "Grocery",
-              areaServed: {
-                "@type": "City",
-                name: "Bahawalpur",
-              },
+              areaServed: { "@type": "City", name: "Bahawalpur" },
               sameAs: [
-                "https://www.facebook.com/mohammedimranrafique/", // update with real links
+                "https://www.facebook.com/mohammedimranrafique/",
                 "https://www.instagram.com/imran.writes___/",
                 "https://wa.me/923036751255",
               ],
