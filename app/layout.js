@@ -1,6 +1,13 @@
 import "./globals.css";
 
 export const metadata = {
+  verification: {
+    google: "g0xJX6EItMq7o895BCZJqQnVHJx1xFr2DDAsI256qts",
+  },
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/assets/Imran-Karyana-Store-Logo.png",
+  },
   // ✅ Title: City + Area + Core Services (60 chars max for Google)
   title: "Imran Karyana Store – Channi Goth | Grocery, EasyPaisa & JazzCash",
 
