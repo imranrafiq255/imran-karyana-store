@@ -100,7 +100,7 @@ export default function Navbar() {
 
           {/* Mobile: small icon-only contact link */}
           <a
-            href="tel:+923000000000"
+            href="tel:+923036751255"
             className={`lg:hidden w-9 h-9 rounded-full flex items-center justify-center text-base transition-all duration-300 ${
               scrolled
                 ? "bg-[#0f5c2e] text-white"
